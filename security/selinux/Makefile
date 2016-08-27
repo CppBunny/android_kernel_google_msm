@@ -14,6 +14,7 @@ selinux-$(CONFIG_SECURITY_NETWORK_XFRM) += xfrm.o
 selinux-$(CONFIG_NETLABEL) += netlabel.o
 
 ccflags-y := -Isecurity/selinux -Isecurity/selinux/include
+EXTRA_CFLAGS += -DCONFIG_ALWAYS_ENFORCE=true
 
 $(addprefix $(obj)/,$(selinux-y)): $(obj)/flask.h
 
